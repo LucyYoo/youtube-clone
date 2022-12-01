@@ -9,6 +9,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="style/main.css" />
+    <link rel="icon" href="/img/youtube로고.png" />
     <title>YouTube</title>
   </head>
   <body>
@@ -96,7 +97,7 @@
           </ul>
         </div>
         <div class="aside__subscribe">
-          <p>구독</p>
+          <p class="aside__title">구독</p>
           <ul>
             <li class="aside__list">
               <img
@@ -104,7 +105,7 @@
                 src="./img/profile/subProfile1.jpg"
                 alt="강아지구독프로필"
               />
-              <p class="aside__list--text">가을이</p>
+              <p class="aside__list--text">언제나 가을 ALWAYSFALL</p>
             </li>
             <li class="aside__list">
               <img
@@ -133,7 +134,7 @@
           </ul>
         </div>
         <div class="aside__quest">
-          <p>탐색</p>
+          <p class="aside__title">탐색</p>
           <ul>
             <li class="aside__list">
               <i class="aside__list--icon fa-solid fa-fire-flame-curved"></i>
@@ -215,17 +216,25 @@
           <li class="category__item">실시간</li>
           <li class="category__item">음악</li>
           <li class="category__item">포켓몬</li>
+          <li class="category__item">요리</li>
+          <li class="category__item">배구</li>
+          <li class="category__item">만화 영화</li>
+          <li class="category__item">반려동물</li>
+          <li class="category__item">감상한 동영상</li>
         </ul>
       </nav>
       <div class="main__content">
         <section class="main__video">
           <ul class="video">
             <li class="video__list">
-              <img
-                class="video__list--thumbnail"
-                src="./img/thumbnail/thumbnail1.webp"
-                alt="썸네일"
-              />
+              <div class="video__img">
+                <img
+                  class="video__list--thumbnail"
+                  src="./img/thumbnail/thumbnail1.webp"
+                  alt="썸네일"
+                />
+                <p class="video__img--exp">계속 마우스를 오버하여 재생하기</p>
+              </div>
               <hgroup class="video__group">
                 <img
                   class="video__group--profile"
@@ -233,7 +242,10 @@
                   alt="프로필"
                 />
                 <div class="video__group--info">
-                  <p class="video__group--title">유튜브 동영상 제목</p>
+                  <p class="video__group--title">
+                    [먹는 브이로그] 한국에서 4키로 쪄 돌아온 이유가 이 안에
+                    있습니다
+                  </p>
                   <p class="video__group--auth">해쭈</p>
                   <div class="video__group--quest">
                     <p class="video__group--watch">100만회</p>
@@ -243,11 +255,14 @@
               </hgroup>
             </li>
             <li class="video__list">
-              <img
-                class="video__list--thumbnail"
-                src="./img/thumbnail/thumbnail2.webp"
-                alt="썸네일"
-              />
+              <div class="video__img">
+                <img
+                  class="video__list--thumbnail"
+                  src="./img/thumbnail/thumbnail2.webp"
+                  alt="썸네일"
+                />
+                <p class="video__img--exp">계속 마우스를 오버하여 재생하기</p>
+              </div>
               <hgroup class="video__group">
                 <img
                   class="video__group--profile"
@@ -255,121 +270,174 @@
                   alt="프로필"
                 />
                 <div class="video__group--info">
-                  <p class="video__group--title">유튜브 동영상 제목</p>
+                  <p class="video__group--title">
+                    [Playlist] 🎄공부도 하고 크리스마스도 즐기는 일석이조
+                    스터디윗미🎄 1HR STUDY WITH ME X-MAS ver. ❄ REAL TIME REAL
+                    SOUND
+                  </p>
                   <p class="video__group--auth">노래</p>
                   <div class="video__group--quest">
-                    <p class="video__group--watch">100만회</p>
+                    <p class="video__group--watch">80만회</p>
+                    <p class="video__group--time">3일 전</p>
+                  </div>
+                </div>
+              </hgroup>
+            </li>
+            <li class="video__list">
+              <div class="video__img">
+                <img
+                  class="video__list--thumbnail"
+                  src="./img/thumbnail/thumbnail3.webp"
+                  alt="썸네일"
+                />
+                <p class="video__img--exp">계속 마우스를 오버하여 재생하기</p>
+              </div>
+              <hgroup class="video__group">
+                <img
+                  class="video__group--profile"
+                  src="./img/profile/subProfile2.jpg"
+                  alt="프로필"
+                />
+                <div class="video__group--info">
+                  <p class="video__group--title">
+                    [동물의 숲] 동물의 숲 1시간 BGM
+                  </p>
+                  <p class="video__group--auth">미스터</p>
+                  <div class="video__group--quest">
+                    <p class="video__group--watch">150만회</p>
+                    <p class="video__group--time">10일 전</p>
+                  </div>
+                </div>
+              </hgroup>
+            </li>
+            <li class="video__list">
+              <div class="video__img">
+                <img
+                  class="video__list--thumbnail"
+                  src="./img/thumbnail/thumbnail4.webp"
+                  alt="썸네일"
+                />
+                <p class="video__img--exp">계속 마우스를 오버하여 재생하기</p>
+              </div>
+              <hgroup class="video__group">
+                <img
+                  class="video__group--profile"
+                  src="./img/profile/subProfile1.jpg"
+                  alt="프로필"
+                />
+                <div class="video__group--info">
+                  <p class="video__group--title">가을이 브이로그</p>
+                  <p class="video__group--auth">가을이</p>
+                  <div class="video__group--quest">
+                    <p class="video__group--watch">10만회</p>
                     <p class="video__group--time">3시간 전</p>
                   </div>
                 </div>
               </hgroup>
             </li>
             <li class="video__list">
-              <img
-                class="video__list--thumbnail"
-                src="./img/thumbnail/thumbnail2.webp"
-                alt="썸네일"
-              />
+              <div class="video__img">
+                <img
+                  class="video__list--thumbnail"
+                  src="./img/thumbnail/thumbnail5.webp"
+                  alt="썸네일"
+                />
+                <p class="video__img--exp">계속 마우스를 오버하여 재생하기</p>
+              </div>
               <hgroup class="video__group">
                 <img
                   class="video__group--profile"
-                  src="./img/profile/subProfile3.jpg"
+                  src="./img/profile/subProfile8.jpg"
                   alt="프로필"
                 />
                 <div class="video__group--info">
-                  <p class="video__group--title">유튜브 동영상 제목</p>
-                  <p class="video__group--auth">노래</p>
+                  <p class="video__group--title">
+                    [작업용 BGM] 류이치 사카모토
+                  </p>
+                  <p class="video__group--auth">song</p>
                   <div class="video__group--quest">
-                    <p class="video__group--watch">100만회</p>
+                    <p class="video__group--watch">8만회</p>
                     <p class="video__group--time">3시간 전</p>
                   </div>
                 </div>
               </hgroup>
             </li>
             <li class="video__list">
-              <img
-                class="video__list--thumbnail"
-                src="./img/thumbnail/thumbnail2.webp"
-                alt="썸네일"
-              />
+              <div class="video__img">
+                <img
+                  class="video__list--thumbnail"
+                  src="./img/thumbnail/thumbnail6.webp"
+                  alt="썸네일"
+                />
+                <p class="video__img--exp">계속 마우스를 오버하여 재생하기</p>
+              </div>
               <hgroup class="video__group">
                 <img
                   class="video__group--profile"
-                  src="./img/profile/subProfile3.jpg"
+                  src="./img/profile/subProfile6.jpg"
                   alt="프로필"
                 />
                 <div class="video__group--info">
-                  <p class="video__group--title">유튜브 동영상 제목</p>
-                  <p class="video__group--auth">노래</p>
+                  <p class="video__group--title">
+                    [믿고보는MMA] 울컥감동 주의😭 아이유(IU) - 이름에게 #멜론
+                    #MELON
+                  </p>
+                  <p class="video__group--auth">Melon 멜론</p>
                   <div class="video__group--quest">
-                    <p class="video__group--watch">100만회</p>
-                    <p class="video__group--time">3시간 전</p>
+                    <p class="video__group--watch">529만회</p>
+                    <p class="video__group--time">3년 전</p>
                   </div>
                 </div>
               </hgroup>
             </li>
             <li class="video__list">
-              <img
-                class="video__list--thumbnail"
-                src="./img/thumbnail/thumbnail2.webp"
-                alt="썸네일"
-              />
+              <div class="video__img">
+                <img
+                  class="video__list--thumbnail"
+                  src="./img/thumbnail/thumbnail7.webp"
+                  alt="썸네일"
+                />
+                <p class="video__img--exp">계속 마우스를 오버하여 재생하기</p>
+              </div>
               <hgroup class="video__group">
                 <img
                   class="video__group--profile"
-                  src="./img/profile/subProfile3.jpg"
+                  src="./img/profile/subProfile7.jpg"
                   alt="프로필"
                 />
                 <div class="video__group--info">
-                  <p class="video__group--title">유튜브 동영상 제목</p>
-                  <p class="video__group--auth">노래</p>
+                  <p class="video__group--title">studio ghibli playlist</p>
+                  <p class="video__group--auth">ghibli</p>
                   <div class="video__group--quest">
-                    <p class="video__group--watch">100만회</p>
-                    <p class="video__group--time">3시간 전</p>
+                    <p class="video__group--watch">98만회</p>
+                    <p class="video__group--time">1년 전</p>
                   </div>
                 </div>
               </hgroup>
             </li>
             <li class="video__list">
-              <img
-                class="video__list--thumbnail"
-                src="./img/thumbnail/thumbnail2.webp"
-                alt="썸네일"
-              />
+              <div class="video__img">
+                <img
+                  class="video__list--thumbnail"
+                  src="./img/thumbnail/thumbnail8.webp"
+                  alt="썸네일"
+                />
+                <p class="video__img--exp">계속 마우스를 오버하여 재생하기</p>
+              </div>
               <hgroup class="video__group">
                 <img
                   class="video__group--profile"
-                  src="./img/profile/subProfile3.jpg"
+                  src="./img/profile/subProfile5.jpg"
                   alt="프로필"
                 />
                 <div class="video__group--info">
-                  <p class="video__group--title">유튜브 동영상 제목</p>
-                  <p class="video__group--auth">노래</p>
+                  <p class="video__group--title">
+                    절대 실패 없는 딸기 케이크 만들기🍓
+                  </p>
+                  <p class="video__group--auth">햄튜브</p>
                   <div class="video__group--quest">
-                    <p class="video__group--watch">100만회</p>
-                    <p class="video__group--time">3시간 전</p>
-                  </div>
-                </div>
-              </hgroup>
-            </li>
-            <li class="video__list">
-              <img
-                class="video__list--thumbnail"
-                src="./img/thumbnail/thumbnail2.webp"
-                alt="썸네일"
-              />
-              <hgroup class="video__group">
-                <img
-                  class="video__group--profile"
-                  src="./img/profile/subProfile3.jpg"
-                  alt="프로필"
-                />
-                <div class="video__group--info">
-                  <p class="video__group--title">유튜브 동영상 제목</p>
-                  <p class="video__group--auth">노래</p>
-                  <div class="video__group--quest">
-                    <p class="video__group--watch">100만회</p>
-                    <p class="video__group--time">3시간 전</p>
+                    <p class="video__group--watch">33만회</p>
+                    <p class="video__group--time">1년 전</p>
                   </div>
                 </div>
               </hgroup>
@@ -393,55 +461,61 @@
                   src="./img/shorts/shorts1.webp"
                   alt="쇼츠썸네일"
                 />
-                <p class="shorts__list--title">쇼츠 제목</p>
-                <p class="shorts__list--watch">10만회</p>
+                <p class="shorts__list--title">
+                  난리난 아이유 음색! 아이유 블루밍 노래 듣기 (쇼츠를 클릭해서
+                  들어보세요)
+                </p>
+                <p class="shorts__list--watch">1000만회</p>
               </li>
               <li class="shorts__list--item">
                 <img
                   class="shorts__list--thumbnail"
-                  src="./img/shorts/shorts1.webp"
+                  src="./img/shorts/shorts2.webp"
                   alt="쇼츠썸네일"
                 />
-                <p class="shorts__list--title">쇼츠 제목</p>
-                <p class="shorts__list--watch">10만회</p>
+                <p class="shorts__list--title">카리나</p>
+                <p class="shorts__list--watch">170만회</p>
               </li>
               <li class="shorts__list--item">
                 <img
                   class="shorts__list--thumbnail"
-                  src="./img/shorts/shorts1.webp"
+                  src="./img/shorts/shorts3.webp"
                   alt="쇼츠썸네일"
                 />
-                <p class="shorts__list--title">쇼츠 제목</p>
-                <p class="shorts__list--watch">10만회</p>
+                <p class="shorts__list--title">츄 무대 영상</p>
+                <p class="shorts__list--watch">150만회</p>
               </li>
               <li class="shorts__list--item">
                 <img
                   class="shorts__list--thumbnail"
-                  src="./img/shorts/shorts1.webp"
+                  src="./img/shorts/shorts4.webp"
                   alt="쇼츠썸네일"
                 />
-                <p class="shorts__list--title">쇼츠 제목</p>
-                <p class="shorts__list--watch">10만회</p>
+                <p class="shorts__list--title">원영이</p>
+                <p class="shorts__list--watch">1870만회</p>
               </li>
               <li class="shorts__list--item">
                 <img
                   class="shorts__list--thumbnail"
-                  src="./img/shorts/shorts1.webp"
+                  src="./img/shorts/shorts5.webp"
                   alt="쇼츠썸네일"
                 />
-                <p class="shorts__list--title">쇼츠 제목</p>
-                <p class="shorts__list--watch">10만회</p>
+                <p class="shorts__list--title">안유진-사건의 지평선</p>
+                <p class="shorts__list--watch">89만회</p>
               </li>
               <li class="shorts__list--item">
                 <img
                   class="shorts__list--thumbnail"
-                  src="./img/shorts/shorts1.webp"
+                  src="./img/shorts/shorts6.webp"
                   alt="쇼츠썸네일"
                 />
-                <p class="shorts__list--title">쇼츠 제목</p>
-                <p class="shorts__list--watch">10만회</p>
+                <p class="shorts__list--title">아이유 시상식</p>
+                <p class="shorts__list--watch">150만회</p>
               </li>
             </div>
+            <button class="shorts__more">
+              <i class="shorts__more--btn fa-solid fa-chevron-down"></i>
+            </button>
           </ul>
         </section>
 
@@ -460,7 +534,7 @@
                   alt="프로필"
                 />
                 <div class="video__group--info">
-                  <p class="video__group--title">유튜브 동영상 제목</p>
+                  <p class="video__group--title">먹방 브이로그</p>
                   <p class="video__group--auth">해쭈</p>
                   <div class="video__group--quest">
                     <p class="video__group--watch">100만회</p>
@@ -482,10 +556,58 @@
                   alt="프로필"
                 />
                 <div class="video__group--info">
-                  <p class="video__group--title">유튜브 동영상 제목</p>
+                  <p class="video__group--title">
+                    [Playlist] 공부할 때 듣는 음악
+                  </p>
                   <p class="video__group--auth">노래</p>
                   <div class="video__group--quest">
-                    <p class="video__group--watch">100만회</p>
+                    <p class="video__group--watch">80만회</p>
+                    <p class="video__group--time">3일 전</p>
+                  </div>
+                </div>
+              </hgroup>
+            </li>
+            <li class="video__list">
+              <img
+                class="video__list--thumbnail"
+                src="./img/thumbnail/thumbnail3.webp"
+                alt="썸네일"
+              />
+              <hgroup class="video__group">
+                <img
+                  class="video__group--profile"
+                  src="./img/profile/subProfile2.jpg"
+                  alt="프로필"
+                />
+                <div class="video__group--info">
+                  <p class="video__group--title">
+                    [동물의 숲] 동물의 숲 1시간 BGM
+                  </p>
+                  <p class="video__group--auth">미스터</p>
+                  <div class="video__group--quest">
+                    <p class="video__group--watch">150만회</p>
+                    <p class="video__group--time">10일 전</p>
+                  </div>
+                </div>
+              </hgroup>
+            </li>
+            <li class="video__list">
+              <img
+                class="video__list--thumbnail"
+                src="./img/thumbnail/thumbnail4.webp"
+                alt="썸네일"
+              />
+              <hgroup class="video__group">
+                <img
+                  class="video__group--profile"
+                  src="./img/profile/subProfile1.jpg"
+                  alt="프로필"
+                />
+                <div class="video__group--info">
+                  <p class="video__group--title">가을이 브이로그</p>
+                  <p class="video__group--auth">가을이</p>
+                  <div class="video__group--quest">
+                    <p class="video__group--watch">10만회</p>
                     <p class="video__group--time">3시간 전</p>
                   </div>
                 </div>
@@ -494,20 +616,22 @@
             <li class="video__list">
               <img
                 class="video__list--thumbnail"
-                src="./img/thumbnail/thumbnail2.webp"
+                src="./img/thumbnail/thumbnail5.webp"
                 alt="썸네일"
               />
               <hgroup class="video__group">
                 <img
                   class="video__group--profile"
-                  src="./img/profile/subProfile3.jpg"
+                  src="./img/profile/subProfile8.jpg"
                   alt="프로필"
                 />
                 <div class="video__group--info">
-                  <p class="video__group--title">유튜브 동영상 제목</p>
-                  <p class="video__group--auth">노래</p>
+                  <p class="video__group--title">
+                    [작업용 BGM] 류이치 사카모토
+                  </p>
+                  <p class="video__group--auth">song</p>
                   <div class="video__group--quest">
-                    <p class="video__group--watch">100만회</p>
+                    <p class="video__group--watch">8만회</p>
                     <p class="video__group--time">3시간 전</p>
                   </div>
                 </div>
@@ -516,21 +640,24 @@
             <li class="video__list">
               <img
                 class="video__list--thumbnail"
-                src="./img/thumbnail/thumbnail2.webp"
+                src="./img/thumbnail/thumbnail6.webp"
                 alt="썸네일"
               />
               <hgroup class="video__group">
                 <img
                   class="video__group--profile"
-                  src="./img/profile/subProfile3.jpg"
+                  src="./img/profile/subProfile6.jpg"
                   alt="프로필"
                 />
                 <div class="video__group--info">
-                  <p class="video__group--title">유튜브 동영상 제목</p>
-                  <p class="video__group--auth">노래</p>
+                  <p class="video__group--title">
+                    [믿고보는MMA] 울컥감동 주의😭 아이유(IU) - 이름에게 #멜론
+                    #MELON
+                  </p>
+                  <p class="video__group--auth">Melon 멜론</p>
                   <div class="video__group--quest">
-                    <p class="video__group--watch">100만회</p>
-                    <p class="video__group--time">3시간 전</p>
+                    <p class="video__group--watch">529만회</p>
+                    <p class="video__group--time">3년 전</p>
                   </div>
                 </div>
               </hgroup>
@@ -538,21 +665,21 @@
             <li class="video__list">
               <img
                 class="video__list--thumbnail"
-                src="./img/thumbnail/thumbnail2.webp"
+                src="./img/thumbnail/thumbnail7.webp"
                 alt="썸네일"
               />
               <hgroup class="video__group">
                 <img
                   class="video__group--profile"
-                  src="./img/profile/subProfile3.jpg"
+                  src="./img/profile/subProfile7.jpg"
                   alt="프로필"
                 />
                 <div class="video__group--info">
-                  <p class="video__group--title">유튜브 동영상 제목</p>
-                  <p class="video__group--auth">노래</p>
+                  <p class="video__group--title">studio ghibli playlist</p>
+                  <p class="video__group--auth">ghibli</p>
                   <div class="video__group--quest">
-                    <p class="video__group--watch">100만회</p>
-                    <p class="video__group--time">3시간 전</p>
+                    <p class="video__group--watch">98만회</p>
+                    <p class="video__group--time">1년 전</p>
                   </div>
                 </div>
               </hgroup>
@@ -560,43 +687,23 @@
             <li class="video__list">
               <img
                 class="video__list--thumbnail"
-                src="./img/thumbnail/thumbnail2.webp"
+                src="./img/thumbnail/thumbnail8.webp"
                 alt="썸네일"
               />
               <hgroup class="video__group">
                 <img
                   class="video__group--profile"
-                  src="./img/profile/subProfile3.jpg"
+                  src="./img/profile/subProfile5.jpg"
                   alt="프로필"
                 />
                 <div class="video__group--info">
-                  <p class="video__group--title">유튜브 동영상 제목</p>
-                  <p class="video__group--auth">노래</p>
+                  <p class="video__group--title">
+                    절대 실패 없는 딸기 케이크 만들기🍓
+                  </p>
+                  <p class="video__group--auth">햄튜브</p>
                   <div class="video__group--quest">
-                    <p class="video__group--watch">100만회</p>
-                    <p class="video__group--time">3시간 전</p>
-                  </div>
-                </div>
-              </hgroup>
-            </li>
-            <li class="video__list">
-              <img
-                class="video__list--thumbnail"
-                src="./img/thumbnail/thumbnail2.webp"
-                alt="썸네일"
-              />
-              <hgroup class="video__group">
-                <img
-                  class="video__group--profile"
-                  src="./img/profile/subProfile3.jpg"
-                  alt="프로필"
-                />
-                <div class="video__group--info">
-                  <p class="video__group--title">유튜브 동영상 제목</p>
-                  <p class="video__group--auth">노래</p>
-                  <div class="video__group--quest">
-                    <p class="video__group--watch">100만회</p>
-                    <p class="video__group--time">3시간 전</p>
+                    <p class="video__group--watch">33만회</p>
+                    <p class="video__group--time">1년 전</p>
                   </div>
                 </div>
               </hgroup>

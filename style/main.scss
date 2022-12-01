@@ -9,34 +9,31 @@
 }
 
 .header {
+  @include mix.my-flex(row, space-between, center);
   position: fixed;
+  z-index: 100;
   top: 0;
   width: 100%;
   height: 56px;
-  padding: 0 16px;
-  @include mix.my-flex(row, space-between, center);
+  padding: 0 const.$padding;
   background-color: const.$background-color;
   &__menu {
     @include mix.my-flex($a-i: center);
     &--bar {
-      padding: 8px;
+      padding: const.$padding * 0.5;
       cursor: pointer;
     }
   }
   &__logo {
     width: 127px;
     height: 56px;
-    padding: 10px;
+    padding: const.$padding * 0.7;
     cursor: pointer;
   }
   &__search {
     @include mix.my-flex($f-d: row, $a-i: center);
     flex: 0 1 728px;
     min-width: 0px;
-
-    // @media (max-width: 656px) {
-    //   flex: 0 1 auto;
-    // }
   }
 }
 
@@ -47,8 +44,8 @@
   &__form {
     display: flex;
     position: relative;
-    margin-left: 40px;
-    padding: 0 4px;
+    margin-left: const.$margin * 2.5;
+    padding: 0 const;
     flex: 1;
     &--input {
       height: 40px;
@@ -57,7 +54,7 @@
       border-radius: 40px 0 0 40px;
       flex: 1;
       &::placeholder {
-        text-indent: 1em;
+        text-indent: 1rem;
       }
     }
     &--button {
@@ -67,6 +64,9 @@
       border-radius: 0 40px 40px 0;
       background-color: const.$icon-background-color;
       cursor: pointer;
+      &:hover {
+        background-color: const.$hover;
+      }
     }
   }
   &__voice {
@@ -74,9 +74,13 @@
     width: 40px;
     height: 40px;
     border: none;
+    margin: 0 const.$margin * 0.5;
     background-color: const.$icon-background-color;
     border-radius: 50%;
     cursor: pointer;
+    &:hover {
+      background-color: const.$hover;
+    }
   }
 
   @media (max-width: 656px) {
@@ -115,12 +119,12 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    margin: 0 10px;
+    margin: 0 const.$margin * 0.8;
     cursor: pointer;
   }
 
   &__icon {
-    padding: 10px;
+    padding: const.$margin * 0.8;
     cursor: pointer;
     &:hover {
       background-color: const.$hover;
@@ -144,28 +148,35 @@
   position: fixed;
   top: 0;
   left: 0;
-  margin-top: 56px;
+  margin-top: const.$margin * 3.5;
   overflow: auto;
-  padding: 0px 10px;
+  padding: 0px const.$padding * 0.7;
   background-color: const.$background-color;
   overflow: hidden;
   height: 100%;
   &:hover {
     overflow: scroll;
   }
+
+  &__title {
+    color: const.$font-color-black;
+    padding: const.$padding * 0.4 const.$padding * 0.7 const.$padding * 0.25;
+  }
+
   &__menu {
     @include mix.sidebox-setting;
   }
 
   &__mini {
+    color: const.$font-color-black;
     display: none;
   }
 
   &__list {
+    @include mix.my-flex($a-i: center);
     width: 200px;
     height: 40px;
-    @include mix.my-flex($a-i: center);
-    padding: 0 12px;
+    padding: 0 const.$padding * 0.8;
     cursor: pointer;
     &:hover {
       background-color: const.$hover;
@@ -175,12 +186,11 @@
       @include mix.my-flex($a-i: center, $j-c: center);
       width: 24px;
       height: 24px;
-      margin-right: 24px;
+      margin-right: const.$margin * 1.5;
     }
 
     &--text {
-      //   width: 130px;
-      font-size: 15px;
+      font-size: const.$font * 0.9;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -190,7 +200,7 @@
       @include mix.my-flex($a-i: center, $j-c: center);
       width: 24px;
       height: 24px;
-      margin-right: 24px;
+      margin-right: const.$margin * 1.5;
       border-radius: 50%;
     }
   }
@@ -209,13 +219,11 @@
 
   @media (max-width: 1313px) {
     & {
-      padding: 0 4px;
-      overflow: hidden;
+      padding: 0 const.$padding * 0.25;
       &:hover {
         overflow: hidden;
       }
     }
-
     &__main {
       display: none;
     }
@@ -224,7 +232,7 @@
       width: 64px;
       &--list {
         @include mix.my-flex($f-d: column, $j-c: center, $a-i: center);
-        padding: 14px 0;
+        padding: const.$padding * 0.9 0;
         &:hover {
           border-radius: 10px;
           background-color: const.$hover;
@@ -238,7 +246,7 @@
       }
 
       &--text {
-        font-size: 10px;
+        font-size: const.$font * 0.6;
         width: 64px;
         text-align: center;
         white-space: nowrap;
@@ -258,20 +266,29 @@
 .main {
   @include mix.my-flex($f-d: column);
   flex-wrap: wrap;
-  margin-top: 56px;
-  margin-left: 240px;
+  margin-top: const.$margin * 3.5;
+  margin-left: const.$margin * 15;
   &__content {
-    margin: 30px;
+    margin: const.$margin * 1.9;
   }
   &__video {
     @include mix.mainbox-setting;
   }
   &__shorts {
     @include mix.mainbox-setting;
+    padding: 0;
+  }
+  &__category {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: const.$background-color;
   }
 
   @media (max-width: 1313px) {
-    margin-left: 72px;
+    margin-left: const.$margin * 4.5;
   }
 
   @media (max-width: 791px) {
@@ -284,17 +301,18 @@
   &__item {
     @include mix.my-flex($a-i: center);
     height: 32px;
-    font-size: 14px;
+    font-size: const.$font * 0.85;
     background-color: const.$category-color;
-    margin: 12px 12px 12px 0px;
-    padding: 0 12px;
+    margin: const.$margin * 0.75 const.$margin * 0.75 const.$margin * 0.75 0px;
+    padding: 0 const.$padding * 0.75;
     border-radius: 8px;
     cursor: pointer;
     &:hover {
       background-color: const.$hover;
     }
     &--tatal {
-      margin: 12px 12px 12px 24px;
+      margin: const.$margin * 0.75 const.$margin * 0.75 const.$margin * 0.75
+        const.$margin * 1.5;
     }
   }
 }
@@ -302,11 +320,31 @@
 .video {
   display: flex;
   flex-wrap: wrap;
+  margin-top: const.$margin;
+  &__img {
+    position: relative;
+    &--exp {
+      display: none;
+      position: absolute;
+      color: const.$foont-color-white;
+      background-color: const.$background-color-black;
+      font-size: const.$font * 0.75;
+      margin-bottom: const.$font * 0.2;
+      bottom: 0;
+      right: 0;
+    }
+    &:hover {
+      .video__img--exp {
+        z-index: 1;
+        display: block;
+      }
+    }
+  }
   &__list {
     cursor: pointer;
-    padding: 10px;
+    padding: const.$padding * 0.6;
     flex: 1 1 300px;
-    min-width: 0;
+    min-width: 280px;
     &--thumbnail {
       width: 100%;
       border-radius: 12px;
@@ -318,7 +356,7 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      margin: 12px 12px 0px 0px;
+      margin: const.$margin * 0.75 const.$margin * 0.75 0 0;
     }
 
     &--info {
@@ -326,24 +364,40 @@
     }
 
     &--title {
-      font-size: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: const.$font-color-black;
+      margin-right: const.$margin;
+      font-size: const.$font * 0.85;
     }
 
     &--auth {
-      font-size: 12px;
+      color: const.$font-color-gray;
+      font-size: const.$font * 0.75;
     }
     &--quest {
+      color: const.$font-color-gray;
       display: flex;
     }
     &--watch,
     &--time {
-      font-size: 12px;
+      font-size: const.$font * 0.75;
     }
 
     &--time {
       &::before {
         content: "•";
-        margin: 0 4px;
+        margin: 0 const.$margin * 0.25;
+      }
+    }
+    &:hover {
+      &::after {
+        content: "\f142";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        margin-left: auto;
       }
     }
   }
@@ -352,15 +406,16 @@
 .shorts {
   &__title {
     @include mix.my-flex($j-c: space-between, $a-i: center);
-    margin: 24px 0 24px 8px;
+    margin: const.$margin * 1.5 0 const.$margin * 1.5 const.$margin * 0.5;
     &--main {
       @include mix.my-flex($a-i: baseline);
     }
 
     &--logo {
+      color: const.$logo-color;
       width: 24px;
       height: 24px;
-      margin: 0 8px 0 0;
+      margin: 0 const.$margin * 0.5 0 0;
     }
 
     &--title {
@@ -370,24 +425,27 @@
     &--delete {
       width: 40px;
       height: 40px;
-      font-size: 14px;
+      font-size: const.$font;
       background-color: transparent;
       border: none;
 
       &:hover {
         background-color: const.$hover;
+        border-radius: 20px;
       }
     }
   }
 
   &__list {
     @include mix.my-flex($j-c: center);
+    overflow: hidden;
+    height: 370px;
     flex-wrap: wrap;
     cursor: pointer;
     &--item {
       width: 180px;
       height: 300px;
-      margin: 0 8px 20px 8px;
+      margin: 0 const.$margin * 0.5 const.$margin * 4.4 const.$margin * 0.5;
     }
     &--thumbnail {
       width: 100%;
@@ -395,10 +453,26 @@
       border-radius: 20px;
     }
     &--title {
-      font-size: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-size: const.$font * 0.85;
     }
     &--watch {
-      font-size: 14px;
+      color: const.$font-color-gray;
+      font-size: const.$font * 0.85;
+    }
+  }
+
+  &__more {
+    width: 100%;
+    padding: const.$padding * 0.8 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: const.$hover;
     }
   }
 }

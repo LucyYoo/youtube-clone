@@ -1,5 +1,7 @@
 //color
 $background-color: rgb(255, 255, 255);
+$background-color-black: rgb(15, 15, 15);
+$foont-color-white: rgb(255, 255, 255);
 $font-color-black: rgb(15, 15, 15);
 $font-color-gray: rgb(110, 110, 100);
 $category-color: rgb(242, 242, 242);
@@ -7,14 +9,16 @@ $category-pick: rgb(15, 15, 15);
 $hover: rgb(231, 230, 230);
 $border-line: rgb(204, 204, 204);
 $icon-background-color: rgb(248, 248, 248);
+$main-border-line: rgb(229, 229, 229);
+$logo-color: rgb(240, 20, 20);
+
 //padding
-$padding--rem: 1rem;
-$paddding--px: 12px;
+$padding: 1rem;
 
 //margin
-$margin--rem: 1rem;
-$margin--px: 12px;
+$margin: 1rem;
 
 //size
+$font: 1rem;
 $icon: 24px;
 $img: 24px;
