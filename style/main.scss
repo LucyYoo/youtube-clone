@@ -146,6 +146,7 @@
 .aside {
   @include mix.my-flex($f-d: column);
   position: fixed;
+  z-index: 110;
   top: 0;
   left: 0;
   margin-top: const.$margin * 3.5;
