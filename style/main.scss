@@ -33,6 +33,10 @@
     @include mix.my-flex($f-d: row, $a-i: center);
     flex: 0 1 728px;
     min-width: 0px;
+
+    // @media (max-width: 656px) {
+    //   flex: 0 1 auto;
+    // }
   }
 }
 
@@ -49,6 +53,7 @@
     &--input {
       height: 40px;
       width: 100%;
+      border: 1.5px solid const.$border-line;
       border-radius: 40px 0 0 40px;
       flex: 1;
       &::placeholder {
@@ -57,7 +62,10 @@
     }
     &--button {
       width: 56px;
+      border: 1.5px solid const.$border-line;
+      border-left: none;
       border-radius: 0 40px 40px 0;
+      background-color: const.$icon-background-color;
       cursor: pointer;
     }
   }
@@ -65,15 +73,45 @@
     @include mix.my-flex($j-c: center, $a-i: center);
     width: 40px;
     height: 40px;
+    border: none;
+    background-color: const.$icon-background-color;
     border-radius: 50%;
     cursor: pointer;
+  }
+
+  @media (max-width: 656px) {
+    & {
+      justify-content: flex-end;
+    }
+    &__form {
+      justify-content: flex-end;
+      margin-left: 0;
+      &--input {
+        display: none;
+      }
+      &--button {
+        width: 40px;
+        background-color: transparent;
+        border: none;
+      }
+    }
+
+    &__voice {
+      background-color: transparent;
+    }
+
+    @media (max-width: 415px) {
+      &__voice {
+        display: none;
+      }
+    }
   }
 }
 
 .user {
   @include mix.my-flex($a-i: center, $j-c: flex-end);
   min-width: 225px;
-  &--img {
+  &__img {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -81,12 +119,22 @@
     cursor: pointer;
   }
 
-  &--icon {
+  &__icon {
     padding: 10px;
     cursor: pointer;
     &:hover {
       background-color: const.$hover;
       border-radius: 10px;
+    }
+  }
+  @media (max-width: 656px) {
+    min-width: 0;
+  }
+  @media (max-width: 415px) {
+    &__icon {
+      &--bell {
+        display: none;
+      }
     }
   }
 }
@@ -109,6 +157,10 @@
     @include mix.sidebox-setting;
   }
 
+  &__mini {
+    display: none;
+  }
+
   &__list {
     width: 200px;
     height: 40px;
@@ -127,7 +179,11 @@
     }
 
     &--text {
+      //   width: 130px;
       font-size: 15px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     &--img {
@@ -150,6 +206,53 @@
   &__quest {
     @include mix.sidebox-setting;
   }
+
+  @media (max-width: 1313px) {
+    & {
+      padding: 0 4px;
+      overflow: hidden;
+      &:hover {
+        overflow: hidden;
+      }
+    }
+
+    &__main {
+      display: none;
+    }
+    &__mini {
+      display: block;
+      width: 64px;
+      &--list {
+        @include mix.my-flex($f-d: column, $j-c: center, $a-i: center);
+        padding: 14px 0;
+        &:hover {
+          border-radius: 10px;
+          background-color: const.$hover;
+        }
+      }
+    }
+
+    &__list {
+      &--icon {
+        margin-right: 0;
+      }
+
+      &--text {
+        font-size: 10px;
+        width: 64px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  @media (max-width: 791px) {
+    &__mini {
+      display: none;
+    }
+  }
 }
 
 .main {
@@ -165,6 +268,14 @@
   }
   &__shorts {
     @include mix.mainbox-setting;
+  }
+
+  @media (max-width: 1313px) {
+    margin-left: 72px;
+  }
+
+  @media (max-width: 791px) {
+    margin-left: 0;
   }
 }
 
