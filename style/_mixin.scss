@@ -1,0 +1,18 @@
+@use "constant.scss" as const;
+
+@mixin my-flex($f-d: null, $j-c: null, $a-i: null) {
+  display: flex;
+  flex-direction: $f-d;
+  justify-content: $j-c;
+  align-items: $a-i;
+}
+
+@mixin sidebox-setting {
+  padding: 12px 0;
+  border-bottom: 1px solid const.$border-line;
+}
+
+@mixin mainbox-setting {
+  padding-bottom: 50px;
+  border-bottom: 5px solid const.$border-line;
+}

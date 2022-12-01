@@ -1,0 +1,293 @@
+@use "mixin.scss" as mix;
+@use "constant.scss" as const;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  @include mix.my-flex(row, space-between, center);
+  background-color: const.$background-color;
+  &__menu {
+    @include mix.my-flex($a-i: center);
+    &--bar {
+      padding: 8px;
+      cursor: pointer;
+    }
+  }
+  &__logo {
+    width: 127px;
+    height: 56px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  &__search {
+    @include mix.my-flex($f-d: row, $a-i: center);
+    flex: 0 1 728px;
+    min-width: 0px;
+  }
+}
+
+.search {
+  display: flex;
+  flex: 1;
+  flex-basis: 100%;
+  &__form {
+    display: flex;
+    position: relative;
+    margin-left: 40px;
+    padding: 0 4px;
+    flex: 1;
+    &--input {
+      height: 40px;
+      width: 100%;
+      border-radius: 40px 0 0 40px;
+      flex: 1;
+      &::placeholder {
+        text-indent: 1em;
+      }
+    }
+    &--button {
+      width: 56px;
+      border-radius: 0 40px 40px 0;
+      cursor: pointer;
+    }
+  }
+  &__voice {
+    @include mix.my-flex($j-c: center, $a-i: center);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+.user {
+  @include mix.my-flex($a-i: center, $j-c: flex-end);
+  min-width: 225px;
+  &--img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+
+  &--icon {
+    padding: 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: const.$hover;
+      border-radius: 10px;
+    }
+  }
+}
+
+.aside {
+  @include mix.my-flex($f-d: column);
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 56px;
+  overflow: auto;
+  padding: 0px 10px;
+  background-color: const.$background-color;
+  overflow: hidden;
+  height: 100%;
+  &:hover {
+    overflow: scroll;
+  }
+  &__menu {
+    @include mix.sidebox-setting;
+  }
+
+  &__list {
+    width: 200px;
+    height: 40px;
+    @include mix.my-flex($a-i: center);
+    padding: 0 12px;
+    cursor: pointer;
+    &:hover {
+      background-color: const.$hover;
+      border-radius: 10px;
+    }
+    &--icon {
+      @include mix.my-flex($a-i: center, $j-c: center);
+      width: 24px;
+      height: 24px;
+      margin-right: 24px;
+    }
+
+    &--text {
+      font-size: 15px;
+    }
+
+    &--img {
+      @include mix.my-flex($a-i: center, $j-c: center);
+      width: 24px;
+      height: 24px;
+      margin-right: 24px;
+      border-radius: 50%;
+    }
+  }
+
+  &__record {
+    @include mix.sidebox-setting;
+  }
+
+  &__subscribe {
+    @include mix.sidebox-setting;
+  }
+
+  &__quest {
+    @include mix.sidebox-setting;
+  }
+}
+
+.main {
+  @include mix.my-flex($f-d: column);
+  flex-wrap: wrap;
+  margin-top: 56px;
+  margin-left: 240px;
+  &__content {
+    margin: 30px;
+  }
+  &__video {
+    @include mix.mainbox-setting;
+  }
+  &__shorts {
+    @include mix.mainbox-setting;
+  }
+}
+
+.category {
+  @include mix.my-flex($j-c: center);
+  &__item {
+    @include mix.my-flex($a-i: center);
+    height: 32px;
+    font-size: 14px;
+    background-color: const.$category-color;
+    margin: 12px 12px 12px 0px;
+    padding: 0 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    &:hover {
+      background-color: const.$hover;
+    }
+    &--tatal {
+      margin: 12px 12px 12px 24px;
+    }
+  }
+}
+
+.video {
+  display: flex;
+  flex-wrap: wrap;
+  &__list {
+    cursor: pointer;
+    padding: 10px;
+    flex: 1 1 300px;
+    min-width: 0;
+    &--thumbnail {
+      width: 100%;
+      border-radius: 12px;
+    }
+  }
+  &__group {
+    display: flex;
+    &--profile {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      margin: 12px 12px 0px 0px;
+    }
+
+    &--info {
+      @include mix.my-flex($f-d: column);
+    }
+
+    &--title {
+      font-size: 14px;
+    }
+
+    &--auth {
+      font-size: 12px;
+    }
+    &--quest {
+      display: flex;
+    }
+    &--watch,
+    &--time {
+      font-size: 12px;
+    }
+
+    &--time {
+      &::before {
+        content: "•";
+        margin: 0 4px;
+      }
+    }
+  }
+}
+
+.shorts {
+  &__title {
+    @include mix.my-flex($j-c: space-between, $a-i: center);
+    margin: 24px 0 24px 8px;
+    &--main {
+      @include mix.my-flex($a-i: baseline);
+    }
+
+    &--logo {
+      width: 24px;
+      height: 24px;
+      margin: 0 8px 0 0;
+    }
+
+    &--title {
+      font-size: 20px;
+    }
+
+    &--delete {
+      width: 40px;
+      height: 40px;
+      font-size: 14px;
+      background-color: transparent;
+      border: none;
+
+      &:hover {
+        background-color: const.$hover;
+      }
+    }
+  }
+
+  &__list {
+    @include mix.my-flex($j-c: center);
+    flex-wrap: wrap;
+    cursor: pointer;
+    &--item {
+      width: 180px;
+      height: 300px;
+      margin: 0 8px 20px 8px;
+    }
+    &--thumbnail {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    }
+    &--title {
+      font-size: 14px;
+    }
+    &--watch {
+      font-size: 14px;
+    }
+  }
+}
