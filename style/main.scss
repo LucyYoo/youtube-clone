@@ -41,6 +41,9 @@
   display: flex;
   flex: 1;
   flex-basis: 100%;
+  input {
+    padding: const.$padding;
+  }
   &__form {
     display: flex;
     position: relative;
@@ -53,9 +56,6 @@
       border: 1.5px solid const.$border-line;
       border-radius: 40px 0 0 40px;
       flex: 1;
-      &::placeholder {
-        text-indent: 1rem;
-      }
     }
     &--button {
       width: 56px;
@@ -82,8 +82,7 @@
       background-color: const.$hover;
     }
   }
-
-  @media (max-width: 656px) {
+  @include mix.media(tablet) {
     & {
       justify-content: flex-end;
     }
@@ -103,11 +102,11 @@
     &__voice {
       background-color: transparent;
     }
+  }
 
-    @media (max-width: 415px) {
-      &__voice {
-        display: none;
-      }
+  @include mix.media(mobile) {
+    &__voice {
+      display: none;
     }
   }
 }
@@ -131,10 +130,11 @@
       border-radius: 10px;
     }
   }
-  @media (max-width: 656px) {
+  @include mix.media(tablet) {
     min-width: 0;
   }
-  @media (max-width: 415px) {
+
+  @include mix.media(mobile) {
     &__icon {
       &--bell {
         display: none;
@@ -206,19 +206,13 @@
     }
   }
 
-  &__record {
-    @include mix.sidebox-setting;
-  }
-
-  &__subscribe {
-    @include mix.sidebox-setting;
-  }
-
+  &__record,
+  &__subscribe,
   &__quest {
     @include mix.sidebox-setting;
   }
 
-  @media (max-width: 1313px) {
+  @include mix.media(large-desktop) {
     & {
       padding: 0 const.$padding * 0.25;
       &:hover {
@@ -257,7 +251,7 @@
     }
   }
 
-  @media (max-width: 791px) {
+  @include mix.media(desktop) {
     &__mini {
       display: none;
     }
@@ -266,7 +260,7 @@
 
 .main {
   @include mix.my-flex($f-d: column);
-  flex-wrap: wrap;
+
   margin-top: const.$margin * 3.5;
   margin-left: const.$margin * 15;
   &__content {
@@ -280,6 +274,7 @@
     padding: 0;
   }
   &__category {
+    @include mix.my-flex($j-c: center);
     position: fixed;
     width: 100%;
     z-index: 100;
@@ -288,17 +283,18 @@
     background-color: const.$background-color;
   }
 
-  @media (max-width: 1313px) {
+  @include mix.media(large-desktop) {
     margin-left: const.$margin * 4.5;
   }
 
-  @media (max-width: 791px) {
+  @include mix.media(desktop) {
     margin-left: 0;
   }
 }
 
 .category {
-  @include mix.my-flex($j-c: center);
+  @include mix.my-flex();
+  flex-shrink: 0;
   &__item {
     @include mix.my-flex($a-i: center);
     height: 32px;

@@ -1,4 +1,5 @@
 @use "constant.scss" as const;
+@use "sass:map";
 
 @mixin my-flex($f-d: null, $j-c: null, $a-i: null) {
   display: flex;
@@ -15,4 +16,17 @@
 @mixin mainbox-setting {
   padding-bottom: 50px;
   border-bottom: 5px solid const.$main-border-line;
+}
+
+@mixin media($name) {
+  $breakpoints: (
+    large-desktop: 1313px,
+    desktop: 791px,
+    tablet: 656px,
+    mobile: 415px,
+  );
+
+  @media (max-width: map.get($breakpoints, $name)) {
+    @content;
+  }
 }
